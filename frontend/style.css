@@ -1,0 +1,233 @@
+/* ✈️ PALETA DE VIAGEM */
+:root {
+    --laranja: #e97832;
+    --laranja-escuro: #c95620;
+    --laranja-claro: #ffead8;
+    --creme: #fff8f0;
+    --branco: #ffffff;
+    --texto: #49352a;
+    --borda: #f1d5bd;
+    --sombra: rgba(174, 91, 38, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #fff8f0, #ffecdb);
+    color: var(--texto);
+    margin: 0;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ✨ TÍTULOS */
+h1, h2 {
+    color: var(--laranja-escuro);
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+h1::before {
+    content: "✈️ ";
+}
+
+h2::before {
+    content: "📍 ";
+}
+
+.introducao {
+    text-align: center;
+    color: #866957;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+#mensagem {
+    min-height: 24px;
+    text-align: center;
+    color: var(--laranja-escuro);
+    font-weight: 600;
+}
+
+/* 🧡 BOTÕES */
+button {
+    background: var(--laranja);
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(201, 86, 32, 0.15);
+    transition: background 0.2s, transform 0.2s,
+                box-shadow 0.2s;
+}
+
+button:hover {
+    background: var(--laranja-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(201, 86, 32, 0.22);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#btnBuscar::before {
+    content: "🔎 ";
+}
+
+#btnSalvar::before {
+    content: "🧳 ";
+}
+
+td button {
+    margin: 3px;
+    padding: 8px 12px;
+}
+
+td .btn-concluir {
+    background: #6b9b66;
+}
+
+td .btn-concluir:hover {
+    background: #4d7c49;
+}
+
+/* 🗺️ TABELA DE DESTINOS */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--branco);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--sombra);
+    margin: 10px 0 40px;
+    border: 1px solid var(--borda);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: center;
+    border-bottom: 1px solid #f5e6da;
+}
+
+th {
+    background: var(--laranja);
+    color: white;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+th:first-child {
+    border-radius: 14px 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 14px 0 0;
+}
+
+tbody tr:nth-child(even) {
+    background: #fffaf5;
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: var(--laranja-claro);
+}
+
+/* 🧭 FORMULÁRIO */
+section {
+    width: min(100%, 700px);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 14px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 10px 30px var(--sombra);
+}
+
+label {
+    font-weight: 600;
+    color: #6e4b36;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid var(--borda);
+    border-radius: 10px;
+    background: #fffdfb;
+    color: var(--texto);
+    font: inherit;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--laranja);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 120, 50, 0.14);
+}
+
+form button {
+    grid-column: 2;
+    justify-self: start;
+}
+
+/* 📱 CELULAR E TABLET */
+@media (max-width: 600px) {
+    body {
+        padding: 25px 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    form button {
+        grid-column: 1;
+        justify-self: stretch;
+    }
+
+    th, td {
+        padding: 12px 8px;
+    }
+}

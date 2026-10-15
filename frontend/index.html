@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Viagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Minha Lista de Viagens</h1>
+        <p class="introducao">Organize os lugares que você quer conhecer.</p>
+        <button id="btnBuscar" type="button">Buscar locais</button>
+        <p id="mensagem" role="status"></p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Local</th><th>País</th><th>Ano</th><th>Valor necessário (R$)</th><th>Ações</th></tr>
+                </thead>
+                <tbody id="listaLocais"></tbody>
+            </table>
+        </div>
+        <section>
+            <h2 id="tituloFormulario">Cadastrar local</h2>
+            <form id="formLocal">
+                <label for="nome">Nome do local</label>
+                <input type="text" id="nome" maxlength="150" required>
+                <label for="pais">País</label>
+                <input type="text" id="pais" maxlength="100" required>
+                <label for="ano">Ano</label>
+                <input type="number" id="ano" min="2026" required>
+                <label for="valor">Valor necessário (R$)</label>
+                <input type="number" id="valor" min="0" step="0.01" required>
+                <button type="submit" id="btnSalvar">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
